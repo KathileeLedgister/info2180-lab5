@@ -1,1 +1,42 @@
-/* Add your own styles */
+header h1{
+    font-size: 40px;
+    font-family: Helvetica;
+}
+
+#lookup{
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 25px;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+#lookup:hover {
+    background-color: #23e3f1;
+    box-shadow: 0px 15px 20px rgba(35, 227, 241, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+
+#country{
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: rgb(35, 227, 241);
+    width: 700px;
+
+}
+
+label{
+    font-size: 30px;
+}
