@@ -1,15 +1,12 @@
 
 function onclickSubmit(event) {
-
-
     do {
         let queryObj = document.getElementById("country");
-        /*if (!queryObj.validity.valid) {
-            alert("Please enter a valid Avenger Name or Alias");
-            break;
-        }*/
         let inputString = queryObj.value;
         inputString = encodeURIComponent(inputString.trim());
+        if(this.id === "lookupCty"){
+            inputString += "&context=cities";
+        }
         let queryRequest = new Request('world.php?country=' + inputString);
         let result = document.getElementById("result");
 
@@ -24,7 +21,7 @@ function onclickSubmit(event) {
                     result.innerHTML = responseText;
                 })
                 .catch((error) => {
-                    result.innerHTML = "<h4 class=\"queryerror\">"+'Error:' + error.message+"</h4>";
+                    result.innerHTML = "<h4 class=\"queryerror\">" + 'Error:' + error.message + "</h4>";
                 });
     } while (false);
     event.stopPropagation();
@@ -33,5 +30,8 @@ function onclickSubmit(event) {
 
 window.onload = function () {
     let elementBtn = document.getElementById("lookup");
+    elementBtn.addEventListener("click", onclickSubmit);
+
+    elementBtn = document.getElementById("lookupCty");
     elementBtn.addEventListener("click", onclickSubmit);
 }
